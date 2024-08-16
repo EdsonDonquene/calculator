@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+/* colors */
+:root
+{
+    --primary: #165a9a;
+    --dark: #071e33; 
+    --light: #4683bc;
+    --extra-light: #5d93c4;
+    --font: #051422;
+    --accent: #2f74b3;
+    --disbled : #ced4da;
+    --yellow : #ff922b;
+}
+body, html
+{
+    height: 100%;
+    overscroll-behavior: none !important;
+}
+.calculator_container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.calculator
+{
+    width: 400px;
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    height: 600px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.123);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--disbled);
+}
+.calculator_display
+{
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.download_btn:hover,
+.download_btn:active,
+.download_btn:focus
+{
+    background-color: var(--primary) !important;
+}
+
+.download_btn
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-transform: none;
+}
+.calculator_display p
+{
+    margin: 0;
+}
+.calculator_display .display
+{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    justify-items: end;
+}
+.jersey-10-regular {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.calculator_display .display h2
+{
+    margin: 0;
+    font-family: 'Jersey 10';
+    font-size: 400%;
+    overflow-x: auto;
+    direction: ltr;
+    overflow-y: hidden;
+}
+.calculator_display .display h2::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.calculator_display .display h2::-webkit-scrollbar-track {
+    background: var(--disbled);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.calculator_display .display h2::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    height: 5px;
+}
+
+.calculator_buttons
+{
+    flex: 1;
+    padding: 15px 0;
+}
+.calculator_buttons .buttons
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.buttons .row
+{
+    height: 16.6%;
+    margin: 0 !important;
+}
+.buttons_row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.buttons_row .btn
+{
+    flex: 1;
+    margin: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 130%;
+    background-color: var(--primary) !important;
+}
+.buttons_row .btn#first
+{
+    background-color: var(--yellow) !important;
+}
+.buttons_row .btn#last
+{
+    background-color: var(--yellow) !important;
+}
+.buttons_row .numbers
+{
+    background-color: var(--dark) !important;
+}
+.buttons_row .operators
+{
+    background-color: var(--extra-light) !important;
+}
+
+@media only screen and (max-width: 1024px) 
+{
+
+}
+
+@media only screen and (max-width: 912px) 
+{
+    .calculator
+    {
+        height: 530px;
+        box-shadow: none;
+    }
+    .buttons_row .btn
+    {
+        height: 45px;
+    }
+
+}
+
+@media only screen and (max-width: 590px) 
+{
+    .calculator
+    {
+        height: 580px;
+    }
+    .calculator_container
+    {
+        width: 100%;
+        background-color: var(--disbled);
+    }
+    .buttons_row .btn
+    {
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 320px) 
+{
+
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>H Calculator</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="eBoladas">
+        <meta name="keywords" content="Calculator">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#fff">
+        <meta name="apple-mobile-web-app-status-bar" content="#fff">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="manifest" href="manifest.json">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+        <link rel="icon" href="rcs/img/icons/icon-48.png">
+
+        <link type="text/css" rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
+        <link type="text/css" rel="stylesheet" href="rcs/css/style.css">
+
+
+        <!-- IOS SUPPORT -->
+        <link rel="apple-touch-icon" href="rcs/img/icons/icon-96.png">
+    </head>
+
+    <body>
+        <div class="calculator_container container">
+            <div class="calculator">
+                <div class="calculator_display">
+                    <button id="install_button" class="btn download_btn" hidden>
+                        Install calculator <i class="material-icons right">download</i> 
+                    </button>
+                    <p style="font-size:80%">Hydan's calculator</p>
+                    <h6 id="results_display"></h6>
+                    <div class="display">
+                        <h2 id="display_input">
+                            
+                        </h2>
+                    </div>
+                </div>
+                <div class="calculator_buttons">
+                    <div class="buttons">
+                        <div class="row">
+                            <div class="buttons_row">
+                                <div class="btn waves-effect" id="first" onclick="clearDisplay()">
+                                    CE
+                                </div>
+                                <div class="btn waves-effect" onclick="inputToDisplay('(')">
+                                    (
+                                </div>
+                                <div class="btn waves-effect" onclick="inputToDisplay(')')">
+                                    )
+                                </div>
+                                <div class="btn waves-effect" onclick="deleteInput()">
+                                    <i class="material-icons">backspace</i>
+                                </div>
+                            </div>                                
+                        </div>
+                        <div class="row">
+                            <div class="buttons_row">
+                                <div class="btn waves-effect operators" onclick="solveSquareRoot()">
+                                    √
+                                </div>
+                                <div class="btn waves-effect operators" onclick="solvePercentage('%')">
+                                    %
+                                </div>
+                                <div class="btn waves-effect operators" onclick="solveSquare()">
+                                    x²
+                                </div>
+                                <div id="modalCredits" class="modal">
+                                    <div class="modal-content">
+                                      <h4>Modal Header</h4>
+                                      <p>A bunch of text</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                    </div>
+                                  </div>
+                                <div class="btn waves-effect operators" onclick="inputToDisplay('+')">
+                                    +
+                                </div>
+                            </div>                                
+                        </div>
+
+                        <div class="row">
+                            <div class="row">
+                                <div class="buttons_row">
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('1')">
+                                        1
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('2')">
+                                        2
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('3')">
+                                        3
+                                    </div>
+                                    <div class="btn waves-effect operators" onclick="inputToDisplay('-')">
+                                        -
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="row">
+                                <div class="buttons_row">
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('4')">
+                                        4
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('5')">
+                                        5
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('6')">
+                                        6
+                                    </div>
+                                    <div class="btn waves-effect operators " onclick="inputToDisplay('*')">
+                                        *
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="buttons_row">
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('7')">
+                                        7
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('8')">
+                                        8
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('9')">
+                                        9
+                                    </div>
+                                    <div class="btn waves-effect operators" onclick="inputToDisplay('/')">
+                                        /
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row">
+                                <div class="buttons_row">
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('00')">
+                                        00
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('0')">
+                                        0
+                                    </div>
+                                    <div class="btn waves-effect numbers waves-light" onclick="inputToDisplay('.')">
+                                        .
+                                    </div>
+                                    <div class="btn waves-effect operators" onclick="evaluateExpression()" id="last">
+                                        =
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script   src="rcs/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script   src="vendors/materialize/js/materialize.min.js" type="text/javascript" charset="utf-8"></script>
+    <script   src="rcs/js/calculator.js" type="text/javascript" charset="utf-8"></script>
+    <script   src="rcs/js/math.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

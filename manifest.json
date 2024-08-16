@@ -1,0 +1,52 @@
+{
+  "display_override": ["standalone"],
+  "name": "H Calculator",
+  "description": "H Calculator mobile WebApp",
+  "short_name": "Hcalculator",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "scope": ".",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "orientation": "portrait-primary",
+  "offline_enabled": "true",
+  "icons": [
+    {
+      "src": "rcs/img/icons/icon-48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "any"
+    },
+    {
+      "src": "rcs/img/icons/icon-72.png",
+      "type": "image/png",
+      "sizes": "72x72",
+      "purpose": "any"
+    },
+    {
+      "src": "rcs/img/icons/icon-96.png",
+      "type": "image/png",
+      "sizes": "96x96",
+      "purpose": "any"
+    },
+    {
+      "src": "rcs/img/icons/icon-144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "rcs/img/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "rcs/img/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+    
+  ]
+}
