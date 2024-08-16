@@ -5,6 +5,8 @@ const assets = [
   "sw.js",
   "rcs/css/style.css",
   "rcs/js/jquery.js",
+  "rcs/js/math.js",
+  "rcs/js/calculator.js",
   "app.js",
   "vendors/materialize/css/materialize.min.css",
   "vendors/materialize/css/materialize.css",
@@ -12,18 +14,8 @@ const assets = [
   "vendors/materialize/js/materialize.min.js",
   "vendors/materialize/js/materialize.js",
   "https://fonts.googleapis.com/css2?family=Jersey+10&display=swap",
-  
-];
 
-/* const limitCache = (name, size) => {
-  caches.open(name).then((cache) => {
-    cache.keys().then((keys) => {
-      if (keys.length > size) {
-        cache.delete(keys[0]).then(limitCache(name, size));
-      }
-    });
-  });
-}; */
+];
 
 const limitCache = async (name, size) => {
   const cache = await caches.open(name);
@@ -99,29 +91,3 @@ self.addEventListener("fetch", (evt) => {
       })
   );
 });
-
-//fetch event handler
-/* self.addEventListener("fetch", (evt) => {
-  console.log("fetch", evt);
-  evt.respondWith(
-    caches
-      .match(evt.request)
-      .then((cachesRes) => {
-        return (
-          cachesRes ||
-          fetch(evt.request).then(async (fetchRes) => {
-            const cache = await caches.open(dynamicCache);
-            cache.put(evt.request.url, fetchRes.clone());
-            limitCache(dynamicCache, 30);
-            return fetchRes;
-          })
-        );
-      })
-      .catch(() => {
-        if (evt.request.url.indexOf(".php") > -1) {
-          return caches.match("fallback.php");
-        }
-      })
-  );
-});
- */

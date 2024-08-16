@@ -19,8 +19,6 @@ window.addEventListener("beforeinstallprompt", e => {
   // Show the install button
   installButton.hidden = false;
 
-  installButton.classList.add('install_btn');
-
   installButton.addEventListener("click", installApp);
 });
 
@@ -28,7 +26,6 @@ function installApp() {
     // Show the prompt
     deferredPrompt.prompt();
     installButton.disabled = true;
-    //installButton2.disabled = true;
   
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then(choiceResult => {
